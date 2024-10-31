@@ -38,8 +38,6 @@
     --accent-green: #77c0af;
     --accent-lime: #d1dc97;
     --accent-red: #e9a9b3;
-
-    --gradient-border: linear-gradient(91.26deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
 }
 
 .gradient-content {
@@ -94,6 +92,7 @@ main {
         justify-content: space-between;
         align-items: center;
         margin-inline: 8.375rem;
+        margin-top: 5.5rem;
     }
 
 }

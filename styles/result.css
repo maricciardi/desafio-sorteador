@@ -1,0 +1,107 @@
+#result {
+    /*desaparecer após clicar para sortear novamente
+    display: none;*/
+    display: none;
+    margin-top: 2.6rem;
+    width: 100%;
+    margin-inline: 2rem;
+    text-align: center;
+
+    h2 {
+        font: var(--label-md);
+        color: var(--content-primary);
+        text-transform: uppercase;
+    }
+
+    p {
+        font: var(--paragraph-md);
+        color: var(--content-secondary);
+        text-transform: uppercase;
+        margin-top: .4rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+    }
+
+    li {
+        list-style-type: none;
+        font: 700 3rem/1.5 var(--ff-roboto-mono);
+        color: var(--content-brand);
+    }
+
+    button {
+        width: 100%;
+        margin-top: 2.5rem;
+        border-radius: .5rem;
+        height: 3.5rem;
+        font: var(--label-sm);
+        color: var(--content-primary);
+        text-transform: uppercase;
+        background-color: var(--bg-tertiary);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        cursor: pointer;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    button:hover {
+        background-color: var(--bg-secondary);
+        transition: .6s;
+
+        .svg-container {
+            animation: rotate .8s linear alternate infinite;
+            transform: translateY(2px);
+        }
+    }
+
+    button:hover::before, button:hover::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 5px);
+        height: calc(100% + 5px);
+        background: linear-gradient(45deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+        z-index: -1;
+        border-radius: .5rem;
+        background-size: 180%;
+        animation: borderAnimation 6s linear infinite;
+    }
+}
+
+@media (width >= 80em) {
+    #result {
+        margin-top: 0rem;
+        max-width: 30rem;
+
+        button {
+            margin-bottom: 0rem;
+        }
+    }
+    
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-25deg);
+    }
+}

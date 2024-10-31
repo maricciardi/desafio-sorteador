@@ -1,4 +1,7 @@
 #sort {
+    /*desaparecer após submeter form
+    display: none;*/
+   
     margin-top: 2.6rem;
 
     h2 {
@@ -11,7 +14,7 @@
         font: var(--paragraph-md);
         color: var(--content-secondary);
     }
-
+    
     .transparency {
         opacity: .3;
     }
@@ -37,8 +40,35 @@
         border: none;
         border-radius: .5rem;
         background-color: var(--bg-secondary);
+        font: var(--display-sm);
+        color: var(--content-primary);
+        text-align: center;
+        position: relative;
     }
 
+    input[type="number"]::-webkit-inner-spin-button,  input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .field:hover, .field:focus  {
+        color: var(--content-brand);
+    }
+
+    input[type="number"]:hover {
+        cursor: pointer;
+        background-color: var(--bg-tertiary);
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    input[type="number"]:focus {
+        border-color: white;
+        border-style: solid;
+        border-width: 2px;
+        outline: none;
+    }
+    
     #repeat {
         margin-top: 1.25rem;
         display: flex;
@@ -97,6 +127,34 @@
         gap: .5rem;
         cursor: pointer;
         margin-bottom: 5rem;
+        position: relative;
+    }
+
+    button:hover {
+        background-color: var(--bg-secondary);
+        transition: .6s;
+
+        .svg-container {
+            animation: moveRight .8s linear alternate infinite;
+            transform: translateY(2px);
+        }
+    }
+
+    button:hover::before, button:hover::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 5px);
+        height: calc(100% + 5px);
+        background: linear-gradient(45deg, #77C0AF 0%, #D1DC97 14.84%, #E9A9B3 32.15%, #D586E0 65.79%, #91A1FA 84.58%);
+        z-index: -1;
+        border-radius: .5rem;
+        background-size: 180%;
+        animation: borderAnimation 6s linear infinite;
+    }
+
+    .svg-container {
+        display: inline-block;
+        transform: translateY(2px);
     }
 }
 
@@ -110,7 +168,27 @@
         }
 
         button {
-            margin-bottom: 5rem;
+            margin-bottom: 0rem;
         }
+    }
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 300%;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translate(0, 2px);
+        
+    }
+    100% {
+        transform: translate(10px, 2px);
+        
     }
 }

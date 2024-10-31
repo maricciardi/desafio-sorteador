@@ -52,13 +52,12 @@
     .intro {
         h1 {
             font: var(--display-lg);
-            max-width: 32rem;
+            width: 32rem;
         }
 
-        .questions {
+        .question {
             margin-top: 2.4rem;
             max-width: 24rem;
-            background-color: lime;
         }
 
         .desktop-only {
@@ -68,5 +67,7 @@
         .mobile-only {
             display: none;
         }
+
+        
     }
 }
